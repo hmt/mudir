@@ -59,6 +59,7 @@ class Mudir < Sinatra::Base
     enable :protection
     set :public_dir, settings.root + "/public"
     enable :static
+    enable :logging
     set :views, settings.root + '/views'
   end
 
