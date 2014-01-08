@@ -1,7 +1,7 @@
 .row
   .col-md-6
     h3 Neue Freigabe oder Freigabeänderung
-    form role="form" action="/update" method="post"
+    form role="form" action="#{url('/update')}" method="post"
       input name="_method" type="hidden" value="PATCH"
       .form-group
         label for="inputEmail" Bitte die eMailadresse angeben, für die die Kalender freigegeben oder geändert werden sollen:

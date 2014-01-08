@@ -107,8 +107,8 @@ class Mudir < Sinatra::Base
   end
 
   get '/css/:file.css' do
-    halt 404 unless File.exist?("views/#{params[:file]}.scss")
-    time = File.stat("views/#{params[:file]}.scss").ctime
+    halt 404 unless File.exist?("#{settings.views}/#{params[:file]}.scss")
+    time = File.stat("#{settings.views}/#{params[:file]}.scss").ctime
     last_modified(time)
     scss params[:file].intern
   end
@@ -149,7 +149,7 @@ class Mudir < Sinatra::Base
                               :headers => {'Content-Type' => 'application/json'})
     end
     session[:flash] = ["Benutzer #{params[:email]} wurde angelegt bzw. geändert", "alert-success"]
-    redirect '/'
+    redirect url('/')
   end
 end
 
