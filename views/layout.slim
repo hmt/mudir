@@ -1,0 +1,24 @@
+doctype 5
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Kalender freigeben
+    /![if lt IE 9]
+      script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"
+      script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"
+    link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" media="screen"
+    link href="/css/app.css" rel="stylesheet"
+  body
+    #wrap
+      .container
+        .row
+          .col-md-12
+            h1 Kalender freigeben
+            ==partial :partial_flash
+            ==yield
+    #footer
+      .container
+        p.text-muted.credit
+          .pull-right.body-content
+            | Kalender freigeben. Fehler? bk@hmt.im

@@ -1,0 +1,44 @@
+.row
+  .col-md-6
+    h3 Neue Freigabe oder Freigabeänderung
+    form role="form" action="/update" method="post"
+      input name="_method" type="hidden" value="PATCH"
+      .form-group
+        label for="inputEmail" Bitte die eMailadresse angeben, für die die Kalender freigegeben oder geändert werden sollen:
+        input#inputEmail.form-control placeholder="eMail-Adresse" type="email" name="email"
+      .form-group
+        label for="calSettings" Wenn nötig, bitte Lese-/Schreibrechte ändern:
+        .form-group#calSettings
+          -result.data.items.each do |i|
+            -next if i.primary || i.accessRole != "owner"
+            .row
+              .col-md-4
+                = i.summary
+              .col-md-4
+                select.form-control.input-sm name="cal[#{i.id}]"
+                  option value="none"                       Kein Zugriff
+                  option value="reader" selected="selected" Nur Lesen
+                  option value="writer"                     Lesen und Schreiben
+      button.btn.btn-default type="submit" Eintragen
+
+p
+.row
+  .col-md-12
+    h3 Übersicht bisherige Freigaben
+    table.table.table-condensed.table-bordered
+      tr
+        td
+        -cal_scopes.each do |c|
+          td #{c.first.first}
+      -users.each do |u|
+        tr
+          td #{u}
+          -cal_scopes.each do |k|
+            -if k.values.flatten.include?({u=>"owner"})
+              td.warning Besitzer
+            -elsif k.values.flatten.include?({u=>"reader"})
+              td.success Nur lesen
+            -elsif k.values.flatten.include?({u=>"writer"})
+              td.danger Lesen und schreiben
+            -else
+              td

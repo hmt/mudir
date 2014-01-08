@@ -1,0 +1,71 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.5)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
+    backports (3.4.0)
+    extlib (0.9.16)
+    faraday (0.9.0.rc6)
+      multipart-post (~> 1.2.0)
+    google-api-client (0.7.0.rc2)
+      addressable (>= 2.3.2)
+      autoparse (>= 0.3.3)
+      extlib (>= 0.9.15)
+      faraday (>= 0.9.0.rc5)
+      jwt (>= 0.1.5)
+      launchy (>= 2.1.1)
+      multi_json (>= 1.0.0)
+      signet (>= 0.5.0)
+      uuidtools (>= 2.1.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    minitest (5.2.0)
+    multi_json (1.8.2)
+    multipart-post (1.2.0)
+    puma (2.7.1)
+      rack (>= 1.1, < 2.0)
+    rack (1.5.2)
+    rack-protection (1.5.1)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    sass (3.2.13)
+    signet (0.5.0)
+      addressable (>= 2.2.3)
+      faraday (>= 0.9.0.rc5)
+      jwt (>= 0.1.5)
+      multi_json (>= 1.0.0)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.6.7)
+    tilt (1.4.1)
+    uuidtools (2.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  google-api-client (~> 0.7.0.rc2)
+  minitest (~> 5)
+  puma
+  sass
+  sinatra
+  sinatra-contrib
+  slim
