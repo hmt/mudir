@@ -6,12 +6,7 @@ require 'slim'
 require 'sass'
 require 'set'
 
-
 class Mudir < Sinatra::Base
-
-  use Rack::Auth::Basic, "Passwortgeschuetzter Bereich" do |username, password|
-    username == (ENV['mudir_user'] ||= 'admin') && password == (ENV['mudir_pass'] ||='admin')
-  end
 
   CREDENTIAL_STORE_FILE = "#{$0}-oauth2.json"
 
