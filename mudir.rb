@@ -27,7 +27,8 @@ class Mudir < Sinatra::Base
   configure do
     client = Google::APIClient.new(
       :application_name => 'Mudir, the director of access',
-      :application_version => '1.0.0')
+      :application_version => '1.1.0')
+    client.retries = 3
 
     file_storage = Google::APIClient::FileStorage.new(CREDENTIAL_STORE_FILE)
     if file_storage.authorization.nil?
